@@ -77,6 +77,31 @@ class Rectangulo:
 #main
 base = float(input("Ingrese la base: "))
 altura = float(input("Ingrese la altura: "))
-
 rec = Rectangulo(base, altura)
-print(rec.mostrar_info())
+
+while True:
+    print("\n--- MENÚ ---")
+    print("1. Calcular área")
+    print("2. Calcular perímetro")
+    print("3. Verificar si es cuadrado")
+    print("4. Mostrar toda la información")
+    print("5. Salir")
+
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        print(f"Área: {rec.calcular_area():.2f}")
+    elif opcion == "2":
+        print(f"Perímetro: {rec.calcular_perimetro():.2f}")
+    elif opcion == "3":
+        if rec.es_cuadrado():
+            print("Sí es cuadrado")
+        else:
+            print("No es cuadrado")
+    elif opcion == "4":
+        print(rec.mostrar_info())
+    elif opcion == "5":
+        print("Saliendo del programa... 👋")
+        break
+    else:
+        print("Opción inválida, intente de nuevo.")
